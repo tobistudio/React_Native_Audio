@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import { COLORS } from '../../constants'
+import { AppContext } from '../../context'
 
 const Welcome = ({ navigation }) => {
-  const [step, setStep] = React.useState(0)
+  const { step, setStep } = useContext(AppContext)
   const slides = [
     {
       id: 1,
@@ -27,11 +28,12 @@ const Welcome = ({ navigation }) => {
       id: 4,
       image: require("./../../assets/images/Audio4.png"),
       heading: "Downloadable stories",
-      text: "Download your child's favorite stories and enjoy them anywhere, anytime"
+      text: "Download your child's favorite stories and enjoy them anywhere, nytime"
     },
   ]
   return (
     <View style={styles.container}>
+
       {
         slides.map((item, index) => {
           return (
@@ -45,7 +47,15 @@ const Welcome = ({ navigation }) => {
       }
 
       <Pressable onPress={() => step === 4 ? navigation.push("Auth") : setStep(step + 1)} style={styles.nextButton}><Text>Next</Text></Pressable>
-
+      <View style={{ flexDirection: "row", display: "flex", alignItems: "center", justifyContent: "space-around" }}>
+        {
+          [1, 2, 3, 4].map((item, index) => {
+            return (
+              <View key={index} style={{ marginHorizontal: 2, width: 10, height: 10, borderRadius: 5, backgroundColor: step === index ? "co" : "slate" }}></View>
+            )
+          })
+        }
+      </View>
     </View>
   )
 }
@@ -55,24 +65,23 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'start',
+    justifyContent: 'flex-start',
     display: "flex",
     flexDirection: "column",
     padding: 20,
   },
   header: {
     backgroundColor: "red",
-    width: "100%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "end",
+    justifyContent: "flex-end",
   },
-  text1: { fontWeight: "bold" },
+  text1: { fontWeight: "bold", fontSize: 36 },
   nextButton: {
     backgroundColor: COLORS.blue.light,
-    color: COLORS.white.default,
+    color: "white",
     padding: 10,
-    borderRadius: 5,
+    borderRadius: 25,
     width: 300,
   }
 
