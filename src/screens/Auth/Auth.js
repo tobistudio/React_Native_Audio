@@ -18,7 +18,7 @@ const Auth = ({ navigation }) => {
   ]
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
       <Image style={{ marginVertical: 40 }} source={require("./../../assets/images/Audio3.png")} />
       <View style={{ borderTopEndRadius: 60, borderTopStartRadius: 60, backgroundColor: "white", width: "100%", height: "60%", position: "absolute", display: "flex", bottom: 0, alignItems: "center", justifyContent: "space-between", paddingTop: 30 }}>
         <View style={{ display: "flex" }}>

@@ -15,8 +15,8 @@ const Signup = ({ navigation }) => {
   })
 
   return (
-    <View style={{ flex: 1 }}>
-      <Image style={{ marginVertical: 40 }} source={require("./../../assets/images/Audio3.png")} />
+    <View style={{ flex: 1, backgroundColor: "white" }}>
+      <Image style={{ marginVertical: 0 }} source={require("./../../../assets/images/Audio3.png")} />
       <View style={{ borderTopEndRadius: 60, borderTopStartRadius: 60, backgroundColor: "white", width: "100%", height: "75%", position: "absolute", display: "flex", bottom: 0, alignItems: "center", justifyContent: "flex-start", paddingTop: 40, paddingHorizontal: 30 }}>
         <Text style={{ color: "#000", fontWeight: "400", fontSize: 25, width: "100%", textAlign: "left" }}>Get Started for free</Text>
         <TextInput
@@ -66,10 +66,11 @@ const Signup = ({ navigation }) => {
           />
           <Icon onPress={() => setSignupData({ ...signupData, showPassword: !signupData.showPassword })} style={{ position: "absolute", right: 15 }} name={signupData.showPassword ? "eye" : 'eye-slash'} size={20} color="#B9B9B9" />
         </View>
-        <View style={{ display: "flex", marginVertical: 20, alignItems: "center", justifyContent: "flex-start", flexDirection: "row", width: "100%" }}>
+        <View style={{ display: "flex", marginVertical: 10, alignItems: "center", justifyContent: "flex-start", flexDirection: "row", width: "100%" }}>
           <Switch value={signupData.agree} onValueChange={(() => setSignupData({ ...signupData, agree: !signupData.agree }))} />
           <Text style={{ width: "90%" }}>I agree with the terms and conditions by creating an account</Text>
         </View>
+        <Text style={{ width: "90%" }}>Already have an account? <Text onPress={() => navigation.navigate("Login")} style={{ color: "#007FFF" }}>Login</Text></Text>
         <Pressable onPress={() => navigation.navigate("ChildData")} style={{ backgroundColor: "white", borderWidth: 1, borderColor: "#007FFF", padding: 10, borderRadius: 25, width: 300, width: "90%", marginVertical: 20 }}><Text style={{ color: "#007FFF", fontWeight: "bold", fontSize: 20, textAlign: "center" }}>Signup</Text></Pressable>
       </View>
     </View>

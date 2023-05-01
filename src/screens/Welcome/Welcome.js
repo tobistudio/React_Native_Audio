@@ -31,15 +31,15 @@ const Welcome = ({ navigation }) => {
       text: "Download your child's favorite stories and enjoy them anywhere, nytime"
     },
   ]
+
   return (
     <View style={styles.container}>
-
       {
         slides.map((item, index) => {
           return (
             <View key={index} style={{ display: step === index ? "flex" : "none" }}>
-              <Image source={item.image} style={{ marginVertical: 20 }} />
-              <Text style={{ fontWeight: "bold", fontSize: 36, textAlign: "center" }}>{item.heading}</Text>
+              <Image source={item.image} style={{ marginVertical: 20, marginTop: 50 }} />
+              <Text style={{ fontWeight: "bold", fontSize: 34, textAlignVertical: 'center', textAlign: "center" }}>{item.heading}</Text>
               <Text style={{ marginVertical: 3 }}>{item.text}</Text>
             </View>
           )

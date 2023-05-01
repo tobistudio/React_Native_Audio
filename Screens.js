@@ -2,8 +2,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import Auth from './src/screens/Auth/Auth';
-import Login from './src/screens/Auth/Login';
-import Signup from './src/screens/Auth/Signup';
+import Login from './src/screens/Auth/Login/Login';
+import Signup from './src/screens/Auth/Signup/Signup';
+import ForgotPassword from './src/screens/Auth/ForgotPassword/ForgotPassword';
+import Verification from './src/screens/Auth/ForgotPassword/Verification';
+import NewPassword from './src/screens/Auth/ForgotPassword/NewPassword';
+import Home from './src/screens/Home/Home';
 import Welcome from './src/screens/Welcome/Welcome';
 import ChildData from './src/screens/ChildData/ChildData';
 import { useNavigation } from '@react-navigation/native';
@@ -17,7 +21,10 @@ const Screens = ({ }) => {
 
     return (
         <Stack.Navigator initialRouteName='Welcome'>
-            <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+            <Stack.Screen name="Login" component={Login} options={{
+                headerShown: true, title: "", headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" }, headerShown: true, title: "",
+                headerTitle: "Login"
+            }} />
             <Stack.Screen name="Signup" component={Signup} options={{
                 headerShown: true, title: "", headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" }, headerLeft: () => (
                     <Pressable
@@ -31,7 +38,7 @@ const Screens = ({ }) => {
             }} />
             <Stack.Screen name="Auth" component={Auth} options={{ headerShown: false }} />
             <Stack.Screen name="Welcome" component={Welcome} options={{
-                headerShown: true, title: "", headerRight: () => (
+                headerShown: true, title: "", headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" }, headerShown: true, title: "", headerRight: () => (
                     <Pressable
                         focusable
                         style={styles.skipButton}
@@ -44,16 +51,21 @@ const Screens = ({ }) => {
             }} />
 
             <Stack.Screen name="ChildData" component={ChildData} options={{
-                headerShown: true, title: "", headerLeft: () => (
+                headerShown: true, title: "", headerRight: () => (
                     <Pressable
                         focusable
                         style={styles.skipButton}
-                        onPress={() => navigation.goBack()}
+                        onPress={() => navigation.navigate("Auth")}
                     >
-                        <Icon style={{ marginLeft: 4, marginTop: 2 }} name="arrow-left" size={14} color="#000" />
+                        <Text>Skip</Text>
+                        <Icon style={{ marginLeft: 4, marginTop: 2 }} name="chevron-right" size={14} color="#000" />
                     </Pressable>
                 ),
             }} />
+            <Stack.Screen name="Verification" component={Verification} options={{ headerShown: true, headerTitle: "Verification" }} />
+            <Stack.Screen name="NewPassword" component={NewPassword} options={{ headerShown: true, headerTitle: "New Password" }} />
+            <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+            <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: true, headerTitle: "Forgot Password" }} />
         </Stack.Navigator>
     )
 }
