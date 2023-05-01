@@ -17,7 +17,18 @@ const ForgotPassword = ({ navigation }) => {
                     onChangeText={(e) => setEmail(e)}
                     value={email}
                 />
-                <Pressable onPress={() => navigation.navigate("Verification")} style={{ backgroundColor: "#007FFF", borderWidth: 1, borderColor: "#007FFF", padding: 10, borderRadius: 25, width: 300, width: "90%", marginVertical: 20 }}><Text style={{ color: "#007FFF", fontWeight: "bold", fontSize: 20, textAlign: "center" }}>Send</Text></Pressable>
+                <Pressable onPress={() => navigation.navigate("Verification")} style={{ backgroundColor: "#007FFF", borderWidth: 1, borderColor: "#007FFF", padding: 10, borderRadius: 25, width: 300, width: "90%", marginVertical: 20 }}><Text style={{ color: "white", fontSize: 16, textAlign: "center" }}>Get Verification Code</Text></Pressable>
+                <View style={{ display: "flex", flexDirection: "row", width: "100%", alignItems: "center", justifyContent: "center" }}>
+                    <View style={{ display: "flex", marginHorizontal: 3, alignItems: "center", justifyContent: "center", backgroundColor: "black", width: 40, height: 40, borderRadius: 40 }}>
+                        <Icon name="facebook" size={20} color={"white"} />
+                    </View>
+                    <View style={{ display: "flex", marginHorizontal: 3, alignItems: "center", justifyContent: "center", backgroundColor: "black", width: 40, height: 40, borderRadius: 40 }}>
+                        <Icon name="google" size={20} color={"white"} />
+                    </View>
+                    <View style={{ display: "flex", marginHorizontal: 3, alignItems: "center", justifyContent: "center", backgroundColor: "black", width: 40, height: 40, borderRadius: 40 }}>
+                        <Icon name="twitter" size={20} color={"white"} />
+                    </View>
+                </View>
             </View>
         </View>
     )

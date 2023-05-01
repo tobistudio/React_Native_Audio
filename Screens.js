@@ -22,7 +22,7 @@ const Screens = ({ }) => {
     return (
         <Stack.Navigator initialRouteName='Welcome'>
             <Stack.Screen name="Login" component={Login} options={{
-                headerShown: true, title: "", headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" }, headerShown: true, title: "",
+                headerShown: true, headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" }, headerShown: true, title: "",
                 headerTitle: "Login"
             }} />
             <Stack.Screen name="Signup" component={Signup} options={{
@@ -51,21 +51,12 @@ const Screens = ({ }) => {
             }} />
 
             <Stack.Screen name="ChildData" component={ChildData} options={{
-                headerShown: true, title: "", headerRight: () => (
-                    <Pressable
-                        focusable
-                        style={styles.skipButton}
-                        onPress={() => navigation.navigate("Auth")}
-                    >
-                        <Text>Skip</Text>
-                        <Icon style={{ marginLeft: 4, marginTop: 2 }} name="chevron-right" size={14} color="#000" />
-                    </Pressable>
-                ),
+                headerShown: true, headerTitle: "", title: "", headerTransparent: true, headerStyle: { backgroundColor: "transparent" },
             }} />
-            <Stack.Screen name="Verification" component={Verification} options={{ headerShown: true, headerTitle: "Verification" }} />
-            <Stack.Screen name="NewPassword" component={NewPassword} options={{ headerShown: true, headerTitle: "New Password" }} />
-            <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-            <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: true, headerTitle: "Forgot Password" }} />
+            <Stack.Screen name="Verification" component={Verification} options={{ headerShown: true, headerTitle: "Verification", headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" } }} />
+            <Stack.Screen name="NewPassword" component={NewPassword} options={{ headerShown: true, headerTitle: "New Password", headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" } }} />
+            <Stack.Screen name="Home" component={Home} options={{ headerShown: false, headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" } }} />
+            <Stack.Screen name="ForgotPassword" component={ForgotPassword} options={{ headerShown: true, headerTransparent: true, headerStyle: { paddingHorizontal: 0, backgroundColor: "transparent" }, headerTitle: "Forgot Password", }} />
         </Stack.Navigator>
     )
 }
