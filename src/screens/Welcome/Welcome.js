@@ -46,7 +46,7 @@ const Welcome = ({ navigation }) => {
         })
       }
 
-      <Pressable onPress={() => step === 3 ? navigation.push("Auth") : setStep(step + 1)} style={styles.nextButton}><Text style={{ color: COLORS.white.default, fontWeight: "bold", fontSize: 20, textAlign: "center" }}>Next</Text></Pressable>
+      <Pressable onPress={() => step === 3 ? navigation.navigate("Auth") : setStep(step + 1)} style={styles.nextButton}><Text style={{ color: COLORS.white.default, fontWeight: "bold", fontSize: 20, textAlign: "center" }}>Next</Text></Pressable>
       <View style={{ flexDirection: "row", marginVertical: 5, display: "flex", alignItems: "center", justifyContent: "space-around" }}>
         {
           [0, 1, 2, 3].map((item, index) => {
