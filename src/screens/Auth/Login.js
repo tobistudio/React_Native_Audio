@@ -1,10 +1,10 @@
 import React from 'react'
-import { SafeAreaView } from 'react-native'
+import { SafeAreaView, View } from 'react-native'
 
 const Login = () => {
   return (
-    <View>
-        <Text>Login</Text>
+    <View style={{ flex: 1 }}>
+      <Text>Login</Text>
     </View>
   )
 }

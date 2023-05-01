@@ -28,7 +28,7 @@ export default function App({ }) {
               <Pressable
                 focusable
                 onPress={() => {
-                  setStep(4)
+                  setStep(3)
                 }}
               >
                 <Text style={styles.skipButton} >Skip</Text>
