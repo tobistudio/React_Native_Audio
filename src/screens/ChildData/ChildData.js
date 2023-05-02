@@ -89,8 +89,8 @@ const ChildData = ({ navigation }) => {
                                         borderWidth: 1,
                                         marginBottom: 10,
                                         borderRadius: 20,
-                                    }}>
-                                        <Pressable key={index} onPress={() => setChildData({ ...childData, age: age.name })}>
+                                    }} key={index}>
+                                        <Pressable onPress={() => setChildData({ ...childData, age: age.name })}>
                                             <Text style={{ textAlign: "center", fontSize: 18, color: childData.age === age.name ? "white" : "#007FFF", fontWeight: "500" }}>{age.label}</Text>
                                         </Pressable>
                                     </View>
