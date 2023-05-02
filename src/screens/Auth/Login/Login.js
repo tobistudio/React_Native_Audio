@@ -42,7 +42,7 @@ const Login = ({ navigation }) => {
           <Text style={{ width: "50%" }}>Remember Password</Text>
           <Text onPress={() => navigation.navigate("ForgotPassword")} style={{ color: "#007FFF" }}>Forgot Password ?</Text>
         </View>
-        <Pressable onPress={() => navigation.navigate("ChildData")} style={{ backgroundColor: "#007FFF", borderWidth: 1, borderColor: "#007FFF", padding: 10, borderRadius: 25, width: 300, width: "90%", marginVertical: 10 }}><Text style={{ color: "white", fontWeight: "bold", fontSize: 20, textAlign: "center" }}>Send</Text></Pressable>
+        <Pressable onPress={() => navigation.navigate("Home")} style={{ backgroundColor: "#007FFF", borderWidth: 1, borderColor: "#007FFF", padding: 10, borderRadius: 25, width: 300, width: "90%", marginVertical: 10 }}><Text style={{ color: "white", fontWeight: "bold", fontSize: 20, textAlign: "center" }}>Send</Text></Pressable>
         <Text style={{ color: "#007FFF", width: "100%", textAlign: "center", marginVertical: 10 }}>or</Text>
         <View style={{ display: "flex", flexDirection: "row", width: "100%", alignItems: "center", justifyContent: "center" }}>
           <View style={{ display: "flex", marginHorizontal: 3, alignItems: "center", justifyContent: "center", backgroundColor: "black", width: 40, height: 40, borderRadius: 40 }}>

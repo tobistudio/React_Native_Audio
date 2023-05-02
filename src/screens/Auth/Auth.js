@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, Pressable, Text, View } from 'react-native'
 
 const Auth = ({ navigation }) => {
+
   const methods = [
     {
       title: "Continue with Google",

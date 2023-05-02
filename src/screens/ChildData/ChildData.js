@@ -58,8 +58,8 @@ const ChildData = ({ navigation }) => {
                         {
                             genders.map((gender, index) => {
                                 return (
-                                    <Pressable key={index} onPress={() => setChildData({ ...childData, gender: gender.name })}>
-                                        <View style={{ padding: 10, paddingBottom: 0, display: "flex", alignItems: "center", borderRadius: 20, backgroundColor: "#e3e3e3", borderWidth: gender.name === childData.gender ? 2 : 0, borderColor: "#007FFF", borderStyle: "solid" }}>
+                                    <Pressable style={{ width: "40%" }} key={index} onPress={() => setChildData({ ...childData, gender: gender.name })}>
+                                        <View style={{ padding: 10, width: "100%", backgroundColor: "rgba(227, 227, 227, 0.54)", paddingBottom: 0, display: "flex", alignItems: "center", borderRadius: 20, backgroundColor: "#e3e3e3", borderWidth: gender.name === childData.gender ? 2 : 0, borderColor: "#007FFF", borderStyle: "solid" }}>
                                             <Text style={{ fontWeight: "bold", fontSize: 18 }}>{gender.label}</Text>
                                             <Image source={gender.image} alt="" />
                                         </View>
@@ -98,7 +98,7 @@ const ChildData = ({ navigation }) => {
                             })
                         }
                     </View>
-                    <Pressable onPress={() => navigation.navigate("ChildData")} style={{ backgroundColor: "white", borderWidth: 1, borderColor: "#007FFF", padding: 10, borderRadius: 25, width: 300, width: "90%", marginVertical: 20 }}><Text style={{ color: "#007FFF", fontWeight: "bold", fontSize: 20, textAlign: "center" }}>Save</Text></Pressable>
+                    <Pressable onPress={() => navigation.navigate("Home")} style={{ backgroundColor: "white", borderWidth: 1, borderColor: "#007FFF", padding: 10, borderRadius: 25, width: 300, width: "90%", marginVertical: 20 }}><Text style={{ color: "#007FFF", fontWeight: "bold", fontSize: 20, textAlign: "center" }}>Save</Text></Pressable>
                 </View>
             </View>
         </View>
