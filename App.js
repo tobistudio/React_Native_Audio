@@ -12,6 +12,7 @@ export default function App({ }) {
       step,
       setStep
     }}>
+  
       <NavigationContainer>
         <Screens />
       </NavigationContainer>
